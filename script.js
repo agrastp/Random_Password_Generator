@@ -22,37 +22,35 @@ function generatePassword() {
     //After length prompt, it prompts the user for types of characters wanted in password.
     var characterSet = "";
     var wantsLowerCase = confirm("Do you want to use lowercase letters?");
-    if (wantsLowerCase) {
+    if (wantsLowerCase){
         characterSet += lowerCaseChar;
     }
     var wantsUpperCase = confirm("Do you want to use uppercase letters?");
-    if (wantsUpperCase) {
+    if (wantsUpperCase){
         characterSet += upperCaseChar;
     }
     var wantsNumbers = confirm("Do you want to use numbers?");
-    if (wantsNumbers) {
+    if (wantsNumbers){
         characterSet += numberChar;
     }
     var wantsSymbols = confirm("Do you want to use symbols?");
-    if (wantsSymbols) {
+    if (wantsSymbols){
         characterSet += symbolChar;
     }
     //This checks if the characterSet has at least one type of character to generate a password with.
-    if (characterSet.length === 0) {
+    if (characterSet.length === 0){
         alert("You must select one character type! Select Generate Password again!")
     }
 
     console.log(characterSet);
     //This will take the length and the chosen characters to generate the password randomly.
     var finalPassword = "";
-    for (let i = 0; i < passLength; i++); {
+    for (let i = 0; i < passLength; i++){
         finalPassword += characterSet.charAt(Math.floor(Math.random() * characterSet.length));
     }
     return finalPassword;
 
 }
-
-
 
 // Write password to the #password input. This initializes the generaterPassword function.
 function writePassword() {
